@@ -1,0 +1,16 @@
+A SEGMENT PARA PUBLIC 'CODE'
+ASSUME CS:A
+ORG 1000H
+
+S:
+    MOV AL,80H
+    OUT 1FH,AL
+    MOV AL,0FFH ; Disable 7-Segment Display
+    OUT 19H,AL
+
+L:
+    MOV AL,01H ; LED
+    OUT 1BH,AL 
+    JMP L
+A ENDS
+END S
